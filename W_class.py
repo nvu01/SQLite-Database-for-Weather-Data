@@ -28,7 +28,6 @@ class W:
 # weather_data method retrieves weather data for a specific date and location from Open Meteo API. The method returns a dictionary using json.loads() to parse the JSON string
     def weather_data(self, date):
         import requests
-        import json
         url = 'https://archive-api.open-meteo.com/v1/archive'
         params = {
             'latitude': self.latitude,
@@ -38,7 +37,7 @@ class W:
             'daily': ['temperature_2m_mean', 'precipitation_sum', 'wind_speed_10m_max']
         }
         response = requests.get(url, params=params)
-        return json.loads(response.text)
+        return response.json()
 
 # temp() method returns mean temperature data for 5 specific dates.
     def temp(self):
