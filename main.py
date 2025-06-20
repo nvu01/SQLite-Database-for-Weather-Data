@@ -1,7 +1,7 @@
-# Create a table in SQLite using the SQLAlchemy ORM
 from sqlalchemy import create_engine, Column, Integer, Float
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
+# Create a table in SQLite using SQLAlchemy ORM
 # Create a SQLite database named "my_database" and set up a session using sessionmaker to allow interacting with the database.
 engine = create_engine('sqlite+pysqlite:///my_database.db', echo=True)
 
